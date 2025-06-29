@@ -1,0 +1,68 @@
+Q1 : What is Docker and Docker image?
+Ans: Docker is an open-source platform that enables you to build, ship, and run applications in containers. 
+A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software — code, runtime, libraries, and dependencies.
+Docker Image:  is a snapshot (or blueprint) of a container. It is a read-only template with instructions for creating a Docker container. An image contains the application and its environment at a specific point in time.
+
+Q2 : What is containerization and its uses?
+Ans : Containerization is the process of packaging an application and its dependencies into a container. A container is a lightweight, portable unit that can run consistently across different environments — from development and testing to production.
+
+Uses of containerization:
+
+Consistency across environments: Containers run the same way on any system with a container runtime, reducing "it works on my machine" problems.
+
+Isolation: Each container runs in its own isolated space, avoiding conflicts between applications and dependencies.
+
+Scalability: Containers can be easily started, stopped, replicated, and orchestrated (using tools like Kubernetes) to handle increased load.
+
+Resource efficiency: Containers share the host OS kernel, making them more lightweight than virtual machines.
+
+Simplified deployment: Applications can be packaged with everything they need, making deployments fast and reliable.
+
+Q3 : Why we need to use docker and drawback of traditional methodology
+ANS: Drawbacks of traditional (non-containerized) methodologies:
+Environment inconsistencies: Apps often behave differently on different machines due to OS/library/config differences.
+
+Dependency conflicts: Running multiple apps with different library versions on the same host can cause clashes.
+
+Heavyweight VMs: Using virtual machines for isolation consumes more resources, as each VM includes its own OS kernel.
+
+Complex deployment: Installing dependencies, setting up environments, and ensuring consistent configuration across servers can be error-prone and time-consuming.
+
+Docker addresses these issues by providing lightweight, portable, and consistent environments for applications.
+
+Q4 : Docker commands
+ANS :  Here are some commonly used Docker commands:
+
+docker --version — Check Docker version.
+
+docker pull <image> — Download an image from Docker Hub.
+
+docker build -t <name>:<tag> . — Build an image from a Dockerfile in the current directory.
+
+docker images — List all local images.
+
+docker run <image> — Run a container from an image.
+
+docker run -it <image> /bin/bash — Run a container with interactive terminal.
+
+docker ps — List running containers.
+
+docker ps -a — List all containers (including stopped).
+
+docker stop <container-id> — Stop a running container.
+
+docker start <container-id> — Start a stopped container.
+
+docker rm <container-id> — Remove a container.
+
+docker rmi <image-id> — Remove an image.
+
+docker logs <container-id> — Show logs of a container.
+
+docker exec -it <container-id> /bin/bash — Run a command in a running container.
+
+Q5 : Lifecycle of container
+Ans : Docker create -> docker run -> docker stop -> docker pause/unpause -> docker exited -> docker rm/rmi
+
+Q6 : How you will check the image size
+Ans : 
