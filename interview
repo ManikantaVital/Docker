@@ -1,4 +1,4 @@
-Q1 : What is Docker and Docker image?
+imagesQ1 : What is Docker and Docker image?
 Ans: Docker is an open-source platform that enables you to build, ship, and run applications in containers. 
 A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software — code, runtime, libraries, and dependencies.
 Docker Image:  is a snapshot (or blueprint) of a container. It is a read-only template with instructions for creating a Docker container. An image contains the application and its environment at a specific point in time.
@@ -65,4 +65,46 @@ Q5 : Lifecycle of container
 Ans : Docker create -> docker run -> docker stop -> docker pause/unpause -> docker exited -> docker rm/rmi
 
 Q6 : How you will check the image size
-Ans : 
+Ans : docker images
+
+---------------------------------------------------------------------------------- Set 2 -------------------------------------------------------------------------------------------------------------
+
+Q7 : Write Sample Docker file
+Ans : # Use an official Python runtime as a parent image
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
+
+# Define environment variable
+ENV PYTHONUNBUFFERED=1
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+
+Q8 : Why do we need Docker file?
+Ans : A Dockerfile is needed because it defines the blueprint for building a Docker image — essentially a repeatable recipe that describes:
+
+✅ Which base image to use (e.g., Python, Ubuntu).
+✅ What files/code to include in the image.
+✅ Which dependencies to install.
+✅ What environment variables or configuration to set.
+✅ What command should run when the container starts.
+
+Q9 : What is the use of base image in Docker file?
+Ans : The base image in a Dockerfile provides the starting point for building your Docker image.
+It serves as a pre-configured foundation — typically an operating system (like Ubuntu) or a language runtime (like Python).
+
+--------------------------------------------------------------------------------------- Set 3 ---------------------------------------------------------------------------------------
+
+Q10 : Suppose I want to create docker file for java what would be the base image you will choose
+Ans : If you’re creating a Dockerfile for a Java application, you typically choose an official Java runtime or JDK base image.
